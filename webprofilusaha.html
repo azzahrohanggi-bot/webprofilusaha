@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Memory Lane Polaroid</title>
+
+  <!-- ICON CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+
+    :root {
+      --pink-soft: #ffe6ea;
+      --pink-light: #fff5f7;
+      --pink-bold: #ff99b7;
+      --text-dark: #333;
+      --text-muted: #777;
+      --shadow: 0 5px 20px rgba(0,0,0,0.08);
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fafafa;
+      color: var(--text-dark);
+    }
+
+    .topbar {
+      background: #f7b9c8;
+      padding: 8px;
+      text-align: center;
+      font-size: 14px;
+      color: #6a3144;
+      letter-spacing: 0.3px;
+    }
+
+    header {
+      background: white;
+      padding: 12px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 2px solid #f3c3cc;
+      box-shadow: var(--shadow);
+      position: sticky;
+      top: 0;
+      z-index: 99;
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-area img {
+      width: 65px;
+      height: 65px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .brand-name {
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    nav {
+      display: flex;
+      gap: 28px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text-dark);
+      font-weight: bold;
+      font-size: 15px;
+    }
+
+    nav a:hover {
+      color: var(--pink-bold);
+    }
+
+    .icon-bar i {
+      font-size: 20px;
+      margin-left: 18px;
+      cursor: pointer;
+      color: #444;
+    }
+
+    .icon-bar i:hover {
+      color: var(--pink-bold);
+    }
+
+    /* HERO */
+    .hero {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 20px;
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: 36px;
+      margin: 0 0 10px;
+      line-height: 1.3;
+    }
+
+    .hero p {
+      font-size: 16px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 12px 24px;
+      background: var(--pink-bold);
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .hero img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+    }
+
+    /* SECTION TITLE */
+    .section-title {
+      max-width: 1100px;
+      margin: 40px auto 10px;
+      padding-left: 20px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    /* CARDS GRID */
+    .cards {
+      max-width: 1100px;
+      margin: 0 auto 30px;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    /* 🎀 FULL AESTHETIC ROUNDED CARD */
+    .card {
+      background: #fff5f8;
+      padding: 26px;
+      border-radius: 24px;             
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      text-align: center;
+      border: 2px solid #ffd6e3;       
+      transition: 0.35s ease;
+      transform: translateY(0);
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 26px rgba(0,0,0,0.14);
+      background: #ffeaf0;
+    }
+
+    .card img {
+      width: 100%;
+      height: 175px;
+      object-fit: cover;
+      border-radius: 20px;
+      margin-bottom: 14px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    }
+
+    .price {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--pink-bold);
+      margin-top: 6px;
+    }
+
+    /* CONTACT */
+    .contact {
+      max-width: 1100px;
+      margin: 0 auto 60px;
+      padding: 0 20px;
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    .contact a {
+      text-decoration: none;
+      color: var(--pink-bold);
+      font-weight: bold;
+    }
+
+    footer {
+      background: var(--pink-soft);
+      padding: 18px;
+      text-align: center;
+      border-top: 2px solid #f3c3cc;
+      font-size: 14px;
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+      nav { display: none; }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- TOP BAR -->
+  <div class="topbar">Bringing your memories to life — with aesthetic polaroid prints</div>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo-area">
+      <img src="logo polaroid.jpg">
+      <div class="brand-name">MEMORY LANE POLAROID</div>
+    </div>
+
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#paket">Paket</a>
+      <a href="#foto">Cetak Foto</a>
+      <a href="#order">Order</a>
+      <a href="#kontak">Kontak</a>
+    </nav>
+
+    <div class="icon-bar">
+      <a href="https://instagram.com/printbyazura25_" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://wa.me/62838339050866" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      <a href="mailto:azzahrohanggi@gmail.com"><i class="fa-regular fa-envelope"></i></a>
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <i class="fa-solid fa-cart-shopping"></i>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div>
+      <h1>Bringing memories to life — in aesthetic polaroid form</h1>
+      <p>Cetak foto polaroid glossy dengan kertas tebal 265 gsm. Hasil tajam, warna hidup, dan kilap premium.</p>
+      <p>Cocok untuk kado, dekor kamar, scrapbook, kartu ucapan, hadiah ulang tahun, anniversary, dan koleksi pribadi.</p>
+      <p>Pembayaran bisa <b>cash</b> atau <b>transfer</b> (wajib kirim bukti transfer).</p>
+      <p><b>Estimasi pengerjaan: 2 hari</b></p>
+      <a class="btn-primary" href="#paket">Lihat Paket</a>
+    </div>
+
+    <img src="awal tampilan.jpg">
+  </section>
+
+  <!-- WELCOME SECTION -->
+  <section class="welcome" style="max-width:1100px; margin:20px auto; padding:20px; text-align:center;">
+    <h2 style="font-size:26px; margin-bottom:10px;">Welcome to Memory Lane Polaroid ✨</h2>
+    <p style="font-size:16px; color:#666; line-height:1.7;">
+      Website ini hadir untuk membantu kamu mengabadikan momen spesial dalam bentuk polaroid yang aesthetic, premium, dan timeless.
+      Dengan kualitas cetak terbaik dan kertas tebal premium 265 gsm, setiap foto yang kamu kirim akan menjadi karya kecil yang indah.
+      Cocok untuk hiasan kamar, kado ulang tahun, scrapbook, kartu ucapan, hingga koleksi pribadi.
+      Kami menyediakan berbagai paket terjangkau, lengkap dengan opsi polaroid custom yang bisa dibuat sesuai selera kamu.
+      Terima kasih sudah berkunjung, semoga kamu menemukan paket yang paling cocok! 💗
+    </p>
+  </section>
+
+  <!-- PAKET -->
+  <h2 class="section-title" id="paket">Harga Paket Polaroid</h2>
+
+  <div class="cards">
+    <div class="card">
+      <img src="1.jpg">
+      <h3>Paket A</h3>
+      <p>1 Foto</p>
+      <div class="price">Rp1.000</div>
+    </div>
+
+    <div class="card">
+      <img src="9.jpg">
+      <h3>Paket B</h3>
+      <p>9 Foto</p>
+      <div class="price">Rp7.000</div>
+    </div>
+
+    <div class="card">
+      <img src="18.jpg">
+      <h3>Paket C</h3>
+      <p>18 Foto</p>
+      <div class="price">Rp12.000</div>
+    </div>
+
+    <div class="card">
+      <img src="27.jpg">
+      <h3>Paket D</h3>
+      <p>27 Foto</p>
+      <div class="price">Rp18.000</div>
+    </div>
+
+    <div class="card">
+      <img src="36.jpg">
+      <h3>Paket E</h3>
+      <p>36 Foto</p>
+      <div class="price">Rp24.000</div>
+    </div>
+
+    <div class="card">
+      <img src="50.jpg">
+      <h3>Paket F</h3>
+      <p>50 Foto</p>
+      <div class="price">Rp32.000</div>
+    </div>
+
+    <div class="card">
+      <img src="75.jpg">
+      <h3>Paket G</h3>
+      <p>75 Foto</p>
+      <div class="price">Rp46.000</div>
+    </div>
+
+    <div class="card">
+      <img src="100.jpg">
+      <h3>Paket H</h3>
+      <p>100 Foto</p>
+      <div class="price">Rp60.000</div>
+    </div>
+  </div>
+
+     <title>Polaroid Custom</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fefefe;
+        }
+        /* Style untuk simulasi polaroid di dalam container */
+        .polaroid-img {
+            /* Membuat gambar di dalam frame polaroid terlihat penuh */
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <main class="container mx-auto px-4 py-10">
+        <h1 class="text-3xl font-bold text-gray-800 mb-6">Polaroid Custom</h1>
+
+        <!-- Card Utama untuk Polaroid Custom -->
+        <div class="bg-pink-50 p-6 sm:p-8 rounded-xl shadow-lg border border-pink-200">
+            
+            <!-- Container Gambar (Card Foto) yang Sudah Ditinggikan -->
+            <div class="w-full bg-white rounded-lg overflow-hidden border border-gray-200 shadow-md mb-8">
+                <!-- Tinggi Card DITINGKATKAN dari yang sebelumnya tampak terpotong -->
+                <!-- Menggunakan h-96 atau h-[400px] untuk tampilan yang lebih lega -->
+                <div class="flex justify-center items-center h-[350px] md:h-[400px] lg:h-[450px] p-4 space-x-4">
+                    
+                    <!-- Contoh Tiga Polaroid Custom -->
+                    
+                    <!-- Polaroid 1: Theme Couple/Hadiah -->
+                    <div class="w-1/3 h-full p-2 bg-white rounded-lg shadow-lg border border-gray-100 flex flex-col justify-end">
+                        <div class="aspect-[4/5] bg-pink-100 relative rounded-md overflow-hidden">
+                            <!-- Ganti URL ini dengan foto kustom yang sesuai (misalnya tema couple) -->
+                            <img src="ultah.jpg" alt="Polaroid Custom Tema Couple" class="polaroid-img">
+                        </div>
+                        <div class="text-center mt-2 text-sm font-medium text-gray-700">Frame Hati</div>
+                    </div>
+
+                    <!-- Polaroid 2: Theme Baby/Keluarga -->
+                    <div class="w-1/3 h-full p-2 bg-white rounded-lg shadow-lg border border-gray-100 flex flex-col justify-end">
+                        <div class="aspect-[4/5] bg-pink-100 relative rounded-md overflow-hidden">
+                            <!-- Ganti URL ini dengan foto kustom yang sesuai (misalnya tema bayi) -->
+                            <img src="baby.jpg" alt="Polaroid Custom Tema Baby" class="polaroid-img">
+                        </div>
+                        <div class="text-center mt-2 text-sm font-medium text-gray-700">Frame Polkadot</div>
+                    </div>
+
+                    <!-- Polaroid 3: Theme Aesthetic/Minimalis -->
+                    <div class="w-1/3 h-full p-2 bg-white rounded-lg shadow-lg border border-gray-100 flex flex-col justify-end">
+                        <div class="aspect-[4/5] bg-pink-100 relative rounded-md overflow-hidden">
+                            <!-- Ganti URL ini dengan foto kustom yang sesuai (misalnya tema minimalis) -->
+                            <img src="minimalis.jpg" alt="Polaroid Custom Tema Minimalis" class="polaroid-img">
+                        </div>
+                        <div class="text-center mt-2 text-sm font-medium text-gray-700">Frame Abstrak</div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <!-- Deskripsi Custom Frame -->
+            <div class="text-center mt-4">
+                <h2 class="text-xl font-semibold text-gray-800 mb-2">Custom Frame</h2>
+                <p class="text-gray-600 mb-4">
+                    Cetak momen berharga dalam bentuk polaroid custom yang estetik, minimalis, dan penuh makna.
+                </p> Pilih desain favoritmu—mulai dari tema ulang tahun, baby/newborn, couple, hingga gaya clean minimalis—unggah foto,
+                </p>tambahkan kata-kata, dan jadikan setiap kenangan terasa lebih spesial. Cocok untuk hadiah ulang tahun, dekorasi kamar, koleksi pribadi, atau sebagai dokumentasi tumbuh kembang si kecil. Custom polaroid kami dibuat dengan detail, tampilan timeless, dan siap mempercantik ruangan ataupun menjadi hadiah manis untuk orang tersayang.
+                </p>
+            </div>
+
+  <!-- PRICELIST FOTO -->
+  <h2 class="section-title" id="foto">Pricelist Cetak Foto Biasa</h2>
+
+  <div class="cards">
+
+    <div class="card">
+      <h3>Ukuran 2×3</h3>
+      <p>1 pcs — <b>Rp1.000</b></p>
+      <p>6 pcs — <b>Rp4.000</b></p>
+      <p>12 pcs — <b>Rp7.000</b></p>
+      <p>20 pcs — <b>Rp10.000</b></p>
+    </div>
+
+    <div class="card">
+      <h3>Ukuran 3×4</h3>
+      <p>1 pcs — <b>Rp1.000</b></p>
+      <p>5 pcs — <b>Rp4.000</b></p>
+      <p>10 pcs — <b>Rp7.000</b></p>
+      <p>16 pcs — <b>Rp10.000</b></p>
+    </div>
+
+    <div class="card">
+      <h3>Ukuran 4×6</h3>
+      <p>1 pcs — <b>Rp1.500</b></p>
+      <p>4 pcs — <b>Rp4.000</b></p>
+      <p>10 pcs — <b>Rp10.000</b></p>
+      <p>20 pcs — <b>Rp18.000</b></p>
+    </div>
+
+    <div class="card">
+      <h3>Ukuran 2R</h3>
+      <p>1 pcs — <b>Rp2.000</b></p>
+      <p>3 pcs — <b>Rp4.000</b></p>
+      <p>6 pcs — <b>Rp7.000</b></p>
+      <p>10 pcs — <b>Rp12.000</b></p>
+    </div>
+
+    <div class="card">
+      <h3>Ukuran 3R</h3>
+      <p>1 pcs — <b>Rp3.000</b></p>
+      <p>2 pcs — <b>Rp4.000</b></p>
+      <p>5 pcs — <b>Rp10.000</b></p>
+      <p>10 pcs — <b>Rp18.000</b></p>
+    </div>
+
+    <div class="card">
+      <h3>Ukuran 4R</h3>
+      <p>1 pcs — <b>Rp5.000</b></p>
+      <p>3 pcs — <b>Rp10.000</b></p>
+      <p>6 pcs — <b>Rp18.000</b></p>
+      <p>10 pcs — <b>Rp28.000</b></p>
+    </div>
+
+    <div class="card">
+      <h3>Ukuran 5R</h3>
+      <p>1 pcs — <b>Rp8.000</b></p>
+      <p>2 pcs — <b>Rp14.000</b></p>
+      <p>5 pcs — <b>Rp30.000</b></p>
+      <p>10 pcs — <b>Rp55.000</b></p>
+    </div>
+
+    <div class="card">
+      <h3>Ukuran 6R</h3>
+      <p>1 pcs — <b>Rp10.000</b></p>
+      <p>2 pcs — <b>Rp16.000</b></p>
+      <p>5 pcs — <b>Rp35.000</b></p>
+      <p>10 pcs — <b>Rp65.000</b></p>
+    </div>
+
+    <div class="card">
+      <h3>Ukuran 8R</h3>
+      <p>1 pcs — <b>Rp13.000</b></p>
+      <p>3 pcs — <b>Rp32.000</b></p>
+      <p>5 pcs — <b>Rp50.000</b></p>
+      <p>10 pcs — <b>Rp95.000</b></p>
+    </div>
+
+  </div>
+
+  <!-- CARA ORDER -->
+  <h2 class="section-title" id="order">Cara Order</h2>
+
+  <div class="cards">
+    <div class="card"><h3>1. Pilih Paket</h3><p>Pilih paket polaroid atau ukuran foto.</p></div>
+    <div class="card"><h3>2. Kirim Foto</h3><p>Kirim foto via WhatsApp atau Instagram.</p></div>
+    <div class="card"><h3>3. Pembayaran</h3><p>Bayar cash atau transfer (wajib kirim bukti).</p></div>
+    <div class="card"><h3>4. Proses Cetak</h3><p>Diproses ±2 hari.</p></div>
+    <div class="card"><h3>5. Ambil / Kirim</h3><p>Ambil langsung atau kirim via kurir.</p></div>
+  </div>
+
+  <!-- KONTAK -->
+  <h2 class="section-title" id="kontak">Kontak</h2>
+
+  <div class="contact">
+    <p><b>Instagram:</b> <a href="https://instagram.com/printbyazura25_" target="_blank">@printbyazura25_</a></p>
+    <p><b>WhatsApp:</b> <a href="https://wa.me/62838339050866" target="_blank">0838-3905-0866</a></p>
+    <p><b>Email:</b> <a href="mailto:azzahrohanggi@gmail.com">azzahrohanggi@gmail.com</a></p>
+    <p><b>Alamat:</b> Jl. Kramat Talun Desa Cirebon Girang Rt 03 Rw 02 No. 066, Kab. Cirebon</p>
+  </div>
+
+  <footer>
+    © 2025 MEMORY LANE POLAROID — Bringing memories to life.
+  </footer>
+
+</body>
+</html>
